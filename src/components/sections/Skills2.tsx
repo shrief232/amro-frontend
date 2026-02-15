@@ -71,8 +71,8 @@ export default function Skills2() {
 									<Box sx={{ width: '83.3%', mx: 'auto', overflow: 'hidden' }}>
 										<Marquee direction="right" speed={40} gradient={false}>
 											{['icon-4.svg', 'icon-1.svg', 'icon-2.svg', 'icon-3.svg', 'icon-6.svg'].map((icon, idx) => (
-												<Link key={idx} href="#" passHref>
-													<IconBox component="a">
+												<Link key={idx} href="#" style={{ textDecoration: 'none' }}>
+													<IconBox>
 														<img src={`assets/imgs/home-page-2/hero-1/${icon}`} alt="skill-icon" />
 													</IconBox>
 												</Link>
@@ -83,7 +83,7 @@ export default function Skills2() {
 										<Marquee direction="left" speed={35} gradient={false}>
 											{['icon-7.svg', 'icon-8.svg', 'icon-9.svg', 'icon-5.svg'].map((icon, idx) => (
 												<Link key={idx} href="#" passHref>
-													<IconBox component="a">
+													<IconBox>
 														<img src={`assets/imgs/home-page-2/hero-1/${icon}`} alt="skill-icon" />
 													</IconBox>
 												</Link>

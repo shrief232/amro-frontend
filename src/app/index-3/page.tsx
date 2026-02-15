@@ -1,6 +1,6 @@
 "use client"
 
-import Layout from "../../components/layout/Layout"
+import Layout from "../../components/layout/layout"
 import { Swiper, SwiperSlide } from "swiper/react"
 import { Autoplay, Navigation, Pagination } from "swiper/modules"
 
