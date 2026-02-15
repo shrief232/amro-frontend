@@ -12,12 +12,11 @@ import {
    TextFieldProps,
 } from "@mui/material";
 import { motion } from "framer-motion";
-import Layout from "../../components/layout/Layout";
+import Layout from "../../components/layout/layout";
 import { usePortfolio } from "../../hooks/use-portfolio";
 import { ProjectCard } from "../../components/project/master-card";
 
 // ================= TYPES =================
-// الـ Types دي لازم تكون مطابقة للي طالع من الـ API
 interface Project {
    id: number;
    title: string;
@@ -27,7 +26,6 @@ interface Project {
 }
 
 export default function WorkPage() {
-   // شلنا الـ casting اللي كان عاملك "قرف" ورجعنا للأصل
    const { projects, loading } = usePortfolio();
 
    return (
