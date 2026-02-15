@@ -1,5 +1,5 @@
 import BlogPost from '../../components/blog/BlogPost'
-import Layout from '../../components/layout/Layout'
+import Layout from '../../components/layout/layout'
 
 export default function Blog() {
     return (

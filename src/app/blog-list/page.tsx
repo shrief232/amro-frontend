@@ -1,6 +1,6 @@
 "use client"
 
-import Layout from "../../components/layout/Layout"
+import Layout from "../../components/layout/layout"
 import Link from "next/link"
 import {
     Box,
