@@ -17,8 +17,8 @@ import { motion } from "framer-motion";
 import ThemeSwitch from "../../../components/elements/ThemeSwitch";
 import Iconify from "../../../components/elements/iconify";
 import { usePathname } from "next/navigation";
-import OffCanvas from "../OffCanvas";
-import MobileMenu from "../MobileMenu";
+import OffCanvas from "../offCanvas";
+import MobileMenu from "../mobileMenu";
 import { PATHS } from "../../../routes/paths";
 
 interface HeaderProps {

@@ -13,7 +13,6 @@ export function usePortfolio(categorySlug?: string) {
             const res = await Api.project.list(categorySlug);
             setProjects(res);
          } catch (error) {
-            console.error("Fetch Error:", error);
             setProjects([]);
          } finally {
             setLoading(false);

@@ -1,7 +1,7 @@
 import ThemeSwitch from '../../../components/elements/ThemeSwitch'
 import Link from 'next/link'
-import OffCanvas from '../OffCanvas'
-import MobileMenu from '../MobileMenu'
+import OffCanvas from '../offCanvas'
+import MobileMenu from '../mobileMenu'
 
 export default function Header3({ scroll, isMobileMenu, handleMobileMenu,isOffCanvas, handleOffCanvas }: any) {
 	return (

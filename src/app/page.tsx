@@ -1,4 +1,4 @@
-import Layout from "../components/layout/Layout"
+import Layout from "../components/layout/layout"
 import Blog1 from "../components/sections/Blog1"
 import Brands1 from "../components/sections/Brands1"
 import Contact1 from "../components/sections/Contact1"
