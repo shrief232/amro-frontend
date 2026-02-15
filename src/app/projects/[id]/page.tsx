@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { Box, Container, Typography, Stack, Divider } from "@mui/material";
 import Api from "../../../lib/api";
 import { CONFIG } from "../../../global-config";
-import Layout from "@/src/components/layout/Layout";
+import Layout from "@/src/components/layout/layout";
 
 export default function ProjectDetails() {
    const { id } = useParams();

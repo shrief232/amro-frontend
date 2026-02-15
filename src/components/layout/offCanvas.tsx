@@ -85,6 +85,7 @@ export default function OffCanvas({ isOffCanvas, handleOffCanvas }: OffCanvasPro
 
             {/* HEADER */}
             <Stack
+               component={motion.div}
                direction="row"
                justifyContent="space-between"
                alignItems="center"

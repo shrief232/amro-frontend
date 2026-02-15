@@ -230,7 +230,6 @@ function TimelineItem({ data, isLast, onOpen }: any) {
              {!isLast && <TimelineLine />}
           </Box>
 
-          {/* Content Card */}
           <CardWrapper
               onClick={onOpen}
               initial={{ opacity: 0, x: 20 }}
