@@ -1,4 +1,6 @@
-import Layout from "../../components/layout/Layout"
+"use client";
+
+import Layout from "../../components/layout/layout"
 import Blog2 from "../../components/sections/Blog2"
 import Contact2 from '../../components/sections/Contact2'
 import Coporation2 from "../../components/sections/Coporation2"
@@ -9,8 +11,8 @@ import Projects2 from "../../components/sections/Projects2"
 import Service2 from "../../components/sections/Service2"
 import Skills2 from "../../components/sections/Skills2"
 import Static2 from "../../components/sections/Static2"
-export default function HomePage2() {
 
+export default function HomePage2() {
 	return (
 		<>
 			<Layout headerStyle={2} footerStyle={2}>

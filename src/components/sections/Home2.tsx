@@ -5,8 +5,6 @@ import { Box, Typography, Stack, Container, styled, Dialog, IconButton, Divider 
 import { motion, AnimatePresence } from "framer-motion";
 import Iconify from "../../components/elements/iconify";
 
-// --- Styled Components ---
-
 const CardWrapper = styled(motion.div)({
    padding: "24px",
    borderRadius: "20px",
@@ -32,8 +30,6 @@ const TimelineLine = styled(Box)({
    width: "1px",
    background: "linear-gradient(to bottom, #8B5CF6 0%, rgba(139, 92, 246, 0) 100%)",
 });
-
-// --- Data ---
 
 const resumeData = [
    {
@@ -87,7 +83,6 @@ const resumeData = [
    },
 ];
 
-// --- Main Component ---
 
 export default function ExperienceSection() {
    const [selectedItem, setSelectedItem] = useState<any>(null);
@@ -119,7 +114,6 @@ export default function ExperienceSection() {
                 </Typography>
              </Stack>
 
-             {/* Two Columns Layout using Stack */}
              <Stack
                  direction={{ xs: "column", md: "row" }}
                  spacing={8}
@@ -207,8 +201,6 @@ export default function ExperienceSection() {
        </Box>
    );
 }
-
-// --- Sub-Components ---
 
 function TimelineItem({ data, isLast, onOpen }: any) {
    return (

@@ -134,7 +134,7 @@ export default function Layout({ footerStyle, breadcrumbTitle, children }: Layou
 
              {footerStyle === 2 ? <Footer2 /> : footerStyle === 3 ? <Footer3 /> : <Footer1 />}
 
-             <BackToTop target="#top" />
+             <BackToTop />
           </motion.div>
        </>
    );
