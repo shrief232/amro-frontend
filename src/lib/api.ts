@@ -7,7 +7,7 @@ import { endpoints } from "./endpoints";
 const http = instance.create({
    baseURL: CONFIG.serverUrl,
    headers: { "Content-Type": "application/json" },
-   withCredentials: true,
+   withCredentials: false,
 });
 
 http.interceptors.response.use(
