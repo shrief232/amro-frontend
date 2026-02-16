@@ -1,0 +1,101 @@
+{
+  "category": {
+    "id": 2,
+    "name": "Art Direction",
+    "slug": "art-direction"
+  },
+  "projects": [
+    {
+      "id": 201,
+      "title": "Nassmat Ailol",
+      "description": "Art direction for a high-end fashion editorial photoshoot with concept development and styling.",
+      "thumbnail": "/projects/art-directions/nassmat-ailol/1.png",
+      "category_name": "Art Direction",
+      "category_slug": "art-direction",
+      "client_name": "Vogue Arabia",
+      "date_completed": "2024-11-05",
+      "media": [
+        {
+          "id": 2011,
+          "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/2.png",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "id": 202,
+      "title": "The Clown",
+      "description": "Art direction for a new product launch campaign including set design and visual identity.",
+      "thumbnail": "/projects/art-directions/the-clown/post/13.png",
+      "category_name": "Art Direction",
+      "category_slug": "art-direction",
+      "client_name": "Nike Middle East",
+      "date_completed": "2024-09-12",
+      "media": [
+        {
+          "id": 2011,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/03.png",
+          "order": 0
+        },
+        {
+          "id": 2012,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/02.png",
+          "order": 0
+        },
+        {
+          "id": 2013,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/01.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/04.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/05.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/06.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/07.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/08.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/09.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/10.png",
+          "order": 0
+        }
+
+
+      ]
+    }
+  ]
+}

@@ -7,6 +7,8 @@ import { Drawer, Box, Stack, Typography, IconButton, Divider, Button } from "@mu
 import { motion } from "framer-motion";
 import Iconify from "../../components/elements/iconify";
 
+const goldColor = "#a67c32";
+
 const menuContainerVariants = {
 	open: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
 	closed: { transition: { staggerChildren: 0.05, staggerDirection: -1 } }
@@ -41,7 +43,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 					backdropFilter: "blur(20px)",
 					color: "#fff",
 					backgroundImage: "none",
-					borderLeft: "1px solid rgba(139, 92, 246, 0.2)",
+					borderLeft: `1px solid ${goldColor}33`,
 					p: 0,
 				},
 			}}
@@ -57,7 +59,17 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 				sx={{ position: 'relative' }}
 			>
 				{/* Background Glow */}
-				<Box sx={{ position: 'absolute', bottom: -50, left: -50, width: 200, height: 200, backgroundColor: '#8B5CF6', filter: 'blur(100px)', opacity: 0.1, zIndex: 0 }} />
+				<Box sx={{
+					position: 'absolute',
+					bottom: -50,
+					left: -50,
+					width: 200,
+					height: 200,
+					backgroundColor: goldColor,
+					filter: 'blur(100px)',
+					opacity: 0.1,
+					zIndex: 0
+				}} />
 
 				{/* HEADER */}
 				<Stack direction="row" alignItems="center" justifyContent="space-between" p={3} sx={{ zIndex: 1 }} component={motion.div} variants={menuItemVariants}>
@@ -67,7 +79,10 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 						sx={{
 							backgroundColor: "rgba(255,255,255,0.05)",
 							color: "white",
-							"&:hover": { backgroundColor: "rgba(139, 92, 246, 0.2)", color: "#8B5CF6" }
+							"&:hover": {
+								backgroundColor: `${goldColor}33`,
+								color: goldColor
+							}
 						}}
 					>
 						<Iconify icon="solar:close-square-linear" width={24} />
@@ -96,14 +111,14 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 											fontSize: "1rem",
 											fontWeight: isActive ? 700 : 400,
 											color: isActive ? "#fff" : "rgba(255,255,255,0.6)",
-											backgroundColor: isActive ? "rgba(139, 92, 246, 0.15)" : "transparent",
-											borderLeft: isActive ? "4px solid #8B5CF6" : "4px solid transparent",
+											backgroundColor: isActive ? `${goldColor}26` : "transparent",
+											borderLeft: isActive ? `4px solid ${goldColor}` : "4px solid transparent",
 											borderRadius: "12px",
 											px: 2.5,
 											py: 1.5,
 											transition: "0.3s all ease",
 											"&:hover": {
-												backgroundColor: "rgba(139, 92, 246, 0.08)",
+												backgroundColor: `${goldColor}14`,
 												color: "#fff",
 												paddingLeft: "25px"
 											},
@@ -129,12 +144,15 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 							size="large"
 							startIcon={<Iconify icon="solar:magic-stick-3-linear" />}
 							sx={{
-								backgroundColor: "#8B5CF6",
+								backgroundColor: goldColor,
 								borderRadius: "14px",
 								py: 1.8,
 								fontWeight: 700,
-								boxShadow: "0 10px 20px rgba(139, 92, 246, 0.2)",
-								"&:hover": { backgroundColor: "#7c3aed", transform: "translateY(-2px)" }
+								boxShadow: `0 10px 20px ${goldColor}33`,
+								"&:hover": {
+									backgroundColor: "#8B6D40",
+									transform: "translateY(-2px)"
+								}
 							}}
 						>
 							Hire Me Now

@@ -1,0 +1,28 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Branding",
+      "slug": "branding",
+      "dataFile": "/projects/branding/data.json"
+    },
+    {
+      "id": 2,
+      "name": "Art Direction",
+      "slug": "art-direction",
+      "dataFile": "/projects/art-directions/data.json"
+    },
+    {
+      "id": 3,
+      "name": "Motion Graphics",
+      "slug": "motion-graphics",
+      "dataFile": "/projects/3D/data.json"
+    },
+    {
+      "id": 4,
+      "name": "Social Media",
+      "slug": "social-media",
+      "dataFile": "/projects/social-media/data.json"
+    }
+  ]
+}

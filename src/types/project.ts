@@ -26,7 +26,7 @@ export interface Project {
    }[];
    client_name: string;
    date_completed: string | null;
-   created_at: string;
+   created_at?: string;
 }
 
 export interface APIResponse<T> {
