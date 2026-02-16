@@ -33,7 +33,6 @@ export default function Layout({ breadcrumbTitle, children }: LayoutProps) {
     const theme = useTheme();
     const isDark = theme.palette.mode === "dark";
     const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-    const isTablet = useMediaQuery(theme.breakpoints.down("md"));
 
     const handleMobileMenu = () => {
         const nextState = !isMobileMenu;
@@ -88,6 +87,11 @@ export default function Layout({ breadcrumbTitle, children }: LayoutProps) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isLoading ? 0 : 1 }}
                 transition={{ duration: 0.8 }}
+                style={{
+                    width: "100%",
+                    position: "relative",
+                    overflowX: "clip" // بدل hidden عشان الواترمارك يظهر
+                }}
             >
                 {/* --- Global Vertical Watermark Start - Responsive --- */}
                 <Box
@@ -95,7 +99,7 @@ export default function Layout({ breadcrumbTitle, children }: LayoutProps) {
                         position: "fixed",
                         top: "50%",
                         right: {
-                            xs: "-140px",
+                            xs: "-120px",
                             sm: "-120px",
                             md: "-100px",
                             lg: "-70px"
@@ -103,9 +107,18 @@ export default function Layout({ breadcrumbTitle, children }: LayoutProps) {
                         transform: "translateY(-50%) rotate(-90deg)",
                         zIndex: 10,
                         pointerEvents: "none",
-                        opacity: { xs: 0.05, sm: 0.08, md: 0.1 }, // زودت الشفافية
-                        width: { xs: "350px", sm: "400px", md: "450px" },
-                        display: { xs: isMobile ? "flex" : "flex", md: "flex" },
+                        opacity: {
+                            xs: 0.03,
+                            sm: 0.06,
+                            md: 0.08
+                        },
+                        width: {
+                            xs: "280px",
+                            sm: "350px",
+                            md: "400px",
+                            lg: "450px"
+                        },
+                        display: "flex",
                         justifyContent: "center",
                         alignItems: "center",
                     }}
@@ -139,7 +152,7 @@ export default function Layout({ breadcrumbTitle, children }: LayoutProps) {
                     handleOffCanvas={handleOffCanvas}
                 />
 
-                <main className="main">
+                <main className="main" style={{ width: "100%" }}>
                     {breadcrumbTitle && <Breadcrumb breadcrumbTitle={breadcrumbTitle} />}
                     {children}
                 </main>
