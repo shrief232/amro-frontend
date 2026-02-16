@@ -1,0 +1,183 @@
+{
+  "category": {
+    "id": 1,
+    "name": "Branding",
+    "slug": "branding"
+  },
+  "projects": [
+    {
+      "id": 101,
+      "title": "Be Pro",
+      "description": "Complete brand identity design for a luxury fashion brand including logo, stationery, and packaging.",
+      "thumbnail": "projects/branding/be-pro/cover-post.jpg",
+      "category_name": "Branding",
+      "category_slug": "branding",
+      "client_name": "Elysian Couture",
+      "date_completed": "2022-12-15",
+      "media": [
+        {
+          "id": 1011,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.267.png",
+          "order": 0
+        },
+        {
+          "id": 1012,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.268.png",
+          "order": 0
+        },
+        {
+          "id": 1013,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.269.png",
+          "order": 0
+        },
+        {
+          "id": 1014,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.274.png",
+          "order": 0
+        },
+        {
+          "id": 1015,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.275.png",
+          "order": 0
+        },
+        {
+          "id": 1016,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.276.png",
+          "order": 0
+        },
+        {
+          "id": 1017,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.277.png",
+          "order": 0
+        },
+        {
+          "id": 1018,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/back1.jpg",
+          "order": 0
+        },
+        {
+          "id": 1019,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/chocolate.jpg",
+          "order": 0
+        },
+        {
+          "id": 1020,
+          "media_type": "image",
+          "source": "/projects/branding/be-pro/1.275.png",
+          "order": 0
+        }
+      ]
+    },
+    {
+      "id": 102,
+      "title": "ElHoot",
+      "description": "Modern minimalist logo design for a tech startup focused on sustainability.",
+      "thumbnail": "/projects/branding/el-hoot/1.png",
+      "category_name": "Branding",
+      "category_slug": "branding",
+      "client_name": "EcoTech Solutions",
+      "date_completed": "2024-10-20",
+      "media": [
+        {
+          "id": 1011,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/1.png",
+          "order": 0
+        },
+        {
+          "id": 1012,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/02.png",
+          "order": 0
+        },
+        {
+          "id": 1013,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/03.png",
+          "order": 0
+        },
+        {
+          "id": 1014,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/04.png",
+          "order": 0
+        },
+        {
+          "id": 1015,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/05.png",
+          "order": 0
+        },
+        {
+          "id": 1016,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/06.png",
+          "order": 0
+        },
+        {
+          "id": 1017,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/07.png",
+          "order": 0
+        },
+        {
+          "id": 1018,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/08.png",
+          "order": 0
+        },
+        {
+          "id": 1019,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/09.png",
+          "order": 0
+        },
+        {
+          "id": 1020,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/10.png",
+          "order": 0
+        },
+        {
+          "id": 1021,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/11.png",
+          "order": 0
+        },
+        {
+          "id": 1022,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/12.png",
+          "order": 0
+        },
+        {
+          "id": 1023,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/13.png",
+          "order": 0
+        },
+        {
+          "id": 1024,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/14.png",
+          "order": 0
+        },
+        {
+          "id": 1025,
+          "media_type": "image",
+          "source": "/projects/branding/el-hoot/15.png",
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

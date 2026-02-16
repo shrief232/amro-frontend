@@ -10,6 +10,7 @@ const START_DELAY = 2.6;
 export default function Home1() {
     const theme = useTheme();
     const isDark = theme.palette.mode === "dark";
+    const goldColor = "#a67c32";
 
     return (
         <Box
@@ -30,7 +31,7 @@ export default function Home1() {
                     right: { xs: "-20%", md: "0%" },
                     width: { xs: 320, md: 620 },
                     height: { xs: 320, md: 620 },
-                    bgcolor: "#8B5CF6",
+                    bgcolor: goldColor,
                     filter: "blur(180px)",
                     opacity: isDark ? 0.1 : 0.05,
                     borderRadius: "50%",
@@ -38,14 +39,13 @@ export default function Home1() {
                 }}
             />
 
-            <Container sx={{ position: "relative", zIndex: 2 }}>
+            <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2  }}>
                 <Stack
                     direction={{ xs: "column-reverse", md: "row" }}
                     alignItems="center"
                     justifyContent="space-between"
                     spacing={{ xs: 6, md: 10 }}
                 >
-                    {/* LEFT CONTENT */}
                     <Stack
                         flex={1.25}
                         spacing={{ xs: 3, md: 4 }}
@@ -58,7 +58,6 @@ export default function Home1() {
                             fontFamily: '"AmrFont", sans-serif'
                         }}
                     >
-                        {/* Role Label */}
                         <Stack
                             direction="row"
                             spacing={1.5}
@@ -69,14 +68,14 @@ export default function Home1() {
                                 sx={{
                                     width: 34,
                                     height: 2,
-                                    bgcolor: "#8B5CF6",
+                                    bgcolor: goldColor,
                                     display: { xs: "none", md: "block" },
                                 }}
                             />
                             <Typography
                                 variant="overline"
                                 sx={{
-                                    color: "#8B5CF6",
+                                    color: goldColor,
                                     fontWeight: 800,
                                     letterSpacing: "0.28em",
                                     fontSize: "0.72rem",
@@ -149,15 +148,15 @@ export default function Home1() {
                                 variant="contained"
                                 size="large"
                                 sx={{
-                                    bgcolor: "#8B5CF6",
+                                    bgcolor: goldColor,
                                     px: 5.5,
                                     py: 1.9,
                                     borderRadius: "14px",
                                     fontWeight: 800,
                                     fontSize: "0.95rem",
                                     textTransform: "none",
-                                    boxShadow: "0 12px 28px rgba(139, 92, 246, 0.28)",
-                                    "&:hover": { bgcolor: "#7c3aed" },
+                                    boxShadow: `0 12px 28px ${goldColor}80`,
+                                    "&:hover": { bgcolor: "#E5B700" },
                                 }}
                                 endIcon={<Iconify icon="solar:download-minimalistic-linear" />}
                             >
@@ -170,7 +169,7 @@ export default function Home1() {
                                 variant="outlined"
                                 size="large"
                                 sx={{
-                                    borderColor: "rgba(139, 92, 246, 0.45)",
+                                    borderColor: `${goldColor}B3`,
                                     color: isDark ? "#ffffff" : "#111111",
                                     px: 5.5,
                                     py: 1.9,
@@ -178,8 +177,8 @@ export default function Home1() {
                                     fontWeight: 700,
                                     textTransform: "none",
                                     "&:hover": {
-                                        borderColor: "#8B5CF6",
-                                        bgcolor: "rgba(139, 92, 246, 0.06)",
+                                        borderColor: goldColor,
+                                        bgcolor: `${goldColor}0F`,
                                     },
                                 }}
                             >
@@ -210,7 +209,7 @@ export default function Home1() {
                         </Stack>
                     </Stack>
 
-                    {/* RIGHT IMAGE */}
+
                     <Stack
                         flex={1}
                         alignItems="center"
@@ -218,14 +217,20 @@ export default function Home1() {
                         initial={{ opacity: 0, scale: 0.92 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, delay: START_DELAY + 0.2 }}
+                        sx={{
+                            width: "100%",
+                        }}
                     >
-                        <Box sx={{ position: "relative" }}>
+                        <Box sx={{
+                            position: "relative",
+                            maxWidth: { xs: "250px", sm: "320px", md: "420px", lg: "540px" },
+                            width: "100%",
+                        }}>
                             <Box
                                 component="img"
                                 src="/personal/Amr_Hero.png"
                                 alt="Amr Mansour — Senior Graphic Designer & Art Director"
                                 sx={{
-                                    maxWidth: { xs: 320, sm: 420, md: 540 },
                                     width: "100%",
                                     height: "auto",
                                     zIndex: 2,
@@ -234,7 +239,6 @@ export default function Home1() {
                                 }}
                             />
 
-                            {/* Glow Halo */}
                             <Box
                                 sx={{
                                     position: "absolute",
@@ -245,7 +249,7 @@ export default function Home1() {
                                     height: "85%",
                                     borderRadius: "50%",
                                     background:
-                                        "radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%)",
+                                        `radial-gradient(circle, ${goldColor}1F 0%, transparent 70%)`,
                                     zIndex: 1,
                                 }}
                             />

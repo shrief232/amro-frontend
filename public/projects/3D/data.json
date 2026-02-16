@@ -1,0 +1,27 @@
+{
+  "category": {
+    "id": 3,
+    "name": "Motion Graphics",
+    "slug": "motion-graphics"
+  },
+  "projects": [
+    {
+      "id": 301,
+      "title": "Animated Brand Story",
+      "description": "2D animated explainer video showcasing brand values and services.",
+      "thumbnail": "/projects/3D/animate/img-1.png",
+      "category_name": "Motion Graphics",
+      "category_slug": "motion-graphics",
+      "client_name": "Careem",
+      "date_completed": "2024-08-22",
+      "media": [
+        {
+          "id": 3011,
+          "media_type": "video",
+          "source": "/projects/3D/animate/img-2.png",
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

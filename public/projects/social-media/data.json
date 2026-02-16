@@ -1,0 +1,27 @@
+{
+  "category": {
+    "id": 4,
+    "name": "Social Media",
+    "slug": "social-media"
+  },
+  "projects": [
+    {
+      "id": 401,
+      "title": "Instagram Campaign Series",
+      "description": "Complete social media campaign design with posts, stories, and reels templates.",
+      "thumbnail": "/projects/social-media/instagram/img-1.png",
+      "category_name": "Social Media",
+      "category_slug": "social-media",
+      "client_name": "Coca-Cola",
+      "date_completed": "2024-12-01",
+      "media": [
+        {
+          "id": 4011,
+          "media_type": "image",
+          "source": "/projects/social-media/instagram/img-2.png",
+          "order": 0
+        }
+      ]
+    }
+  ]
+}

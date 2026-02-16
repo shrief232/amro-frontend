@@ -2,62 +2,80 @@
 
 import React from 'react';
 import CountUp from 'react-countup';
-import { Box, Container, Stack, Typography, styled } from '@mui/material';
+import { Box, Container, Stack, Typography, styled, useTheme } from '@mui/material';
 
-// تحويل الـ Counter Item لمكون فرعي عشان الكود ميبقاش طويل ومنظم
+const goldColor = "#a67c32";
+
 interface CounterProps {
 	end: number;
 	labelTop: string;
 	labelBottom: string;
 }
 
-const CounterItem = ({ end, labelTop, labelBottom }: CounterProps) => (
-	<Box sx={{ py: 2 }}>
-		<Stack direction="row" alignItems="center" justifyContent="center">
-			{/* الرقم */}
-			<Typography
-				variant="h2" // بديل لـ ds-1
-				sx={{
-					fontWeight: 700,
-					color: 'text.primary', // لون الـ text-dark
-					display: 'flex',
-					alignItems: 'center',
-					"&::before": {
-						content: '"+"',
-						color: 'primary.main', // لون الـ text-primary-1
-						fontWeight: 500,
-						mr: 0.5
-					}
-				}}
-			>
-				<CountUp enableScrollSpy={true} end={end} />
-			</Typography>
+const CounterItem = ({ end, labelTop, labelBottom }: CounterProps) => {
+	const theme = useTheme();
+	const isDark = theme.palette.mode === "dark";
 
-			{/* النص الجانبي */}
-			<Stack sx={{ ml: 1.5, textAlign: 'left' }}>
+	return (
+		<Box sx={{ py: 2 }}>
+			<Stack direction="row" alignItems="center" justifyContent="center">
 				<Typography
-					variant="body1"
-					sx={{ color: 'rgba(255, 255, 255, 0.5)', lineHeight: 1.2 }}
+					variant="h2"
+					sx={{
+						fontWeight: 700,
+						color: isDark ? '#fff' : '#111',
+						display: 'flex',
+						alignItems: 'center',
+						fontSize: { xs: '2.5rem', md: '3rem' },
+						"&::before": {
+							content: '"+"',
+							color: goldColor,
+							fontWeight: 500,
+							mr: 0.5,
+							fontSize: { xs: '2rem', md: '2.5rem' }
+						}
+					}}
 				>
-					{labelTop}
+					<CountUp enableScrollSpy={true} end={end} duration={2.5} />
 				</Typography>
-				<Typography
-					variant="body1"
-					sx={{ fontWeight: 'bold', lineHeight: 1.2 }}
-				>
-					{labelBottom}
-				</Typography>
+
+				<Stack sx={{ ml: 1.5, textAlign: 'left' }}>
+					<Typography
+						variant="body1"
+						sx={{
+							color: isDark ? 'rgba(255, 255, 255, 0.5)' : 'rgba(0, 0, 0, 0.5)',
+							lineHeight: 1.2,
+							fontSize: { xs: '0.85rem', md: '1rem' }
+						}}
+					>
+						{labelTop}
+					</Typography>
+					<Typography
+						variant="body1"
+						sx={{
+							fontWeight: 'bold',
+							lineHeight: 1.2,
+							color: isDark ? '#fff' : '#111',
+							fontSize: { xs: '0.85rem', md: '1rem' }
+						}}
+					>
+						{labelBottom}
+					</Typography>
+				</Stack>
 			</Stack>
-		</Stack>
-	</Box>
-);
+		</Box>
+	);
+};
 
 export default function Static1() {
+	const theme = useTheme();
+	const isDark = theme.palette.mode === "dark";
+
 	const stats = [
-		{ end: 12, labelTop: "Year of", labelBottom: "Experience" },
-		{ end: 250, labelTop: "Projects", labelBottom: "Completed" },
-		{ end: 680, labelTop: "Satisfied", labelBottom: "Happy Clients" },
-		{ end: 18, labelTop: "Awards", labelBottom: "Won Received" },
+		{ end: 12, labelTop: "Years of", labelBottom: "Experience" },
+		{ end: 180, labelTop: "Projects", labelBottom: "Completed" },
+		{ end: 95, labelTop: "Satisfied", labelBottom: "Clients" },
+		{ end: 8, labelTop: "Awards", labelBottom: "Won" },
 	];
 
 	return (
@@ -67,25 +85,38 @@ export default function Static1() {
 				position: 'relative',
 				overflow: 'hidden',
 				zIndex: 0,
-				py: 8,
-				bgcolor: '#0A0A0A' // بديل لـ bg-900
+				py: { xs: 6, md: 8 },
+				bgcolor: isDark ? '#0A0A0A' : '#f5f5f5',
+				transition: 'background-color 0.3s ease',
 			}}
 		>
 			<Container maxWidth="lg">
-				{/* Stack هنا شايل الـ Row بالكامل وبيتحكم في التوزيع */}
 				<Stack
-					direction={{ xs: 'column', md: 'row' }}
+					direction={{ xs: 'column', sm: 'row' }}
 					justifyContent="space-between"
 					alignItems="center"
-					spacing={{ xs: 4, md: 2 }}
-					sx={{ flexWrap: 'wrap' }}
+					spacing={{ xs: 2, sm: 4, md: 2 }}
+					sx={{
+						flexWrap: 'wrap',
+						gap: { xs: 1, md: 0 }
+					}}
 				>
 					{stats.map((stat, index) => (
 						<Box
 							key={index}
 							sx={{
-								width: { xs: '100%', md: 'auto' },
-								minWidth: { md: '200px' }
+								width: { xs: '100%', sm: '50%', md: 'auto' },
+								minWidth: { md: '180px', lg: '200px' },
+								textAlign: 'center',
+								borderRight: {
+									md: index < stats.length - 1 ? `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}` : 'none'
+								},
+								borderBottom: {
+									xs: index < stats.length - 1 ? `1px solid ${isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.1)'}` : 'none',
+									md: 'none'
+								},
+								pb: { xs: index < stats.length - 1 ? 2 : 0, md: 0 },
+								mb: { xs: index < stats.length - 1 ? 2 : 0, md: 0 },
 							}}
 						>
 							<CounterItem

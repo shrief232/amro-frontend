@@ -2,16 +2,11 @@
 
 import { Box, Typography, styled } from "@mui/material";
 import { motion } from "framer-motion";
-import { CONFIG } from "../../global-config";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Link from "next/link";
+import { Project } from "../../types/project";
 
-interface Project {
-    id: number | string;
-    thumbnail: string;
-    title: string;
-    category_name: string;
-}
+const goldColor = "#a67c32";
 
 const CardWrapper = styled(motion.div)({
     position: "relative",
@@ -25,16 +20,18 @@ const ImageContainer = styled(Box)({
     borderRadius: "16px",
     overflow: "hidden",
     backgroundColor: "#1A1A1A",
-    boxShadow: "0 8px 16px rgba(0,0,0,0.15)",
+    boxShadow: `0 8px 16px ${goldColor}1A, 0 0 0 1px ${goldColor}1A inset`,
     aspectRatio: "1/1",
     width: "100%",
     height: "auto",
+    transition: "all 0.3s ease",
+    "&:hover": {
+        boxShadow: `0 12px 28px ${goldColor}33, 0 0 0 1px ${goldColor}4D inset`,
+    }
 });
 
 export const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
-    const imageUrl = project.thumbnail?.startsWith("http")
-        ? project.thumbnail
-        : `${CONFIG.serverUrl}${project.thumbnail}`;
+    const imageUrl = project.thumbnail || "/placeholder-image.jpg";
 
     return (
         <Link href={`/projects/${project.id}`} style={{ textDecoration: "none" }}>
@@ -59,6 +56,9 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                             objectFit: "cover",
                             display: "block",
                         }}
+                        onError={(e) => {
+                            e.currentTarget.src = "/placeholder-image.jpg";
+                        }}
                     />
 
                     <Box
@@ -70,7 +70,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                         sx={{
                             position: "absolute",
                             inset: 0,
-                            bgcolor: "rgba(139, 92, 246, 0.15)",
+                            bgcolor: `${goldColor}26`, // 15% opacity
                             mixBlendMode: "overlay",
                         }}
                     />
@@ -78,8 +78,8 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
 
                 <Box
                     sx={{
-                        mt: 1.5,  // 2 -> 1.5
-                        px: 0.5,  // 1 -> 0.5
+                        mt: 1.5,
+                        px: 0.5,
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
@@ -95,7 +95,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                                 textTransform: "uppercase",
                                 display: "block",
                                 mb: 0.2,
-                                fontSize: "10px",  // 11px -> 10px
+                                fontSize: "10px",
                             }}
                         >
                             {project.category_name}
@@ -104,7 +104,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                             variant="body1"
                             sx={{
                                 color: "#fff",
-                                fontWeight: 600,  // 700 -> 600
+                                fontWeight: 600,
                                 fontFamily: "var(--font-syne)",
                                 fontSize: "15px",
                                 lineHeight: 1.2,
@@ -118,13 +118,17 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                     </Box>
                     <motion.div
                         variants={{
-                            hover: { x: 3, backgroundColor: "#8B5CF6" },
+                            hover: {
+                                x: 3,
+                                backgroundColor: goldColor,
+                                boxShadow: `0 4px 12px ${goldColor}4D`,
+                            },
                         }}
                         style={{
                             width: "32px",
                             height: "32px",
                             borderRadius: "50%",
-                            border: "1px solid rgba(255,255,255,0.1)",
+                            border: `1px solid ${goldColor}33`,
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",

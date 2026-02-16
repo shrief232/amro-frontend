@@ -1,26 +1,38 @@
 "use client";
 
 import React, { useState } from "react";
-import { Box, Typography, Stack, Container, styled, Dialog, IconButton, Divider } from "@mui/material";
+import { Box, Typography, Stack, Container, styled, Dialog, IconButton, Divider, useTheme } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
 import Iconify from "../../components/elements/iconify";
 
-const CardWrapper = styled(motion.div)({
+const goldColor = "#a67c32";
+
+const CardWrapper = styled(motion.div)(({ theme }) => ({
    padding: "24px",
    borderRadius: "20px",
-   backgroundColor: "rgba(255, 255, 255, 0.03)",
+   backgroundColor: theme.palette.mode === "dark"
+       ? "rgba(255, 255, 255, 0.03)"
+       : "rgba(0, 0, 0, 0.02)",
    backdropFilter: "blur(10px)",
-   border: "1px solid rgba(139, 92, 246, 0.1)",
+   border: `1px solid ${goldColor}1A`,
    position: "relative",
    width: "100%",
    cursor: "pointer",
    transition: "0.3s all ease-in-out",
+   boxShadow: theme.palette.mode === "dark"
+       ? `0 4px 20px ${goldColor}0D`
+       : `0 4px 20px ${goldColor}0D`,
    "&:hover": {
-      borderColor: "rgba(139, 92, 246, 0.5)",
-      backgroundColor: "rgba(139, 92, 246, 0.05)",
+      borderColor: `${goldColor}80`,
+      backgroundColor: theme.palette.mode === "dark"
+          ? `${goldColor}0D`
+          : `${goldColor}08`,
       transform: "translateX(10px)",
+      boxShadow: theme.palette.mode === "dark"
+          ? `0 8px 30px ${goldColor}26`
+          : `0 8px 30px ${goldColor}1A`,
    },
-});
+}));
 
 const TimelineLine = styled(Box)({
    position: "absolute",
@@ -28,7 +40,7 @@ const TimelineLine = styled(Box)({
    top: "30px",
    bottom: "-30px",
    width: "1px",
-   background: "linear-gradient(to bottom, #8B5CF6 0%, rgba(139, 92, 246, 0) 100%)",
+   background: `linear-gradient(to bottom, ${goldColor} 0%, ${goldColor}00 100%)`,
 });
 
 const resumeData = [
@@ -83,9 +95,10 @@ const resumeData = [
    },
 ];
 
-
 export default function ExperienceSection() {
    const [selectedItem, setSelectedItem] = useState<any>(null);
+   const theme = useTheme();
+   const isDark = theme.palette.mode === "dark";
 
    const workItems = resumeData.filter((item) => item.type === "work");
    const eduItems = resumeData.filter((item) => item.type === "education");
@@ -94,7 +107,7 @@ export default function ExperienceSection() {
        <Box
            sx={{
               py: 15,
-              bgcolor: "#050505",
+              bgcolor: isDark ? "#050505" : "#f8f8f8",
               position: "relative",
               overflow: "hidden",
            }}
@@ -105,12 +118,18 @@ export default function ExperienceSection() {
              <Stack spacing={2} sx={{ mb: 10, textAlign: "center" }}>
                 <Typography
                     variant="overline"
-                    sx={{ color: "#8B5CF6", fontWeight: 900, letterSpacing: 4 }}
+                    sx={{ color: goldColor, fontWeight: 900, letterSpacing: 4 }}
                 >
                    Resume
                 </Typography>
-                <Typography variant="h2" fontWeight={900} color="#fff">
-                   Education & <span style={{ color: "#8B5CF6" }}>Experience</span>
+                <Typography
+                    variant="h2"
+                    fontWeight={900}
+                    sx={{
+                       color: isDark ? "#fff" : "#111",
+                    }}
+                >
+                   Education & <span style={{ color: goldColor }}>Experience</span>
                 </Typography>
              </Stack>
 
@@ -123,8 +142,14 @@ export default function ExperienceSection() {
                 {/* Education Column */}
                 <Stack spacing={4} sx={{ flex: 1, width: "100%" }}>
                    <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
-                      <Iconify icon="solar:history-bold-duotone" width={32} color="#8B5CF6" />
-                      <Typography variant="h4" fontWeight={900} color="#fff">Education</Typography>
+                      <Iconify icon="solar:history-bold-duotone" width={32} color={goldColor} />
+                      <Typography
+                          variant="h4"
+                          fontWeight={900}
+                          sx={{ color: isDark ? "#fff" : "#111" }}
+                      >
+                         Education
+                      </Typography>
                    </Stack>
                    {eduItems.map((item, index) => (
                        <TimelineItem
@@ -132,6 +157,7 @@ export default function ExperienceSection() {
                            data={item}
                            isLast={index === eduItems.length - 1}
                            onOpen={() => setSelectedItem(item)}
+                           isDark={isDark}
                        />
                    ))}
                 </Stack>
@@ -139,8 +165,14 @@ export default function ExperienceSection() {
                 {/* Experience Column */}
                 <Stack spacing={4} sx={{ flex: 1, width: "100%" }}>
                    <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 2 }}>
-                      <Iconify icon="solar:case-round-bold-duotone" width={32} color="#8B5CF6" />
-                      <Typography variant="h4" fontWeight={900} color="#fff">Experience</Typography>
+                      <Iconify icon="solar:case-round-bold-duotone" width={32} color={goldColor} />
+                      <Typography
+                          variant="h4"
+                          fontWeight={900}
+                          sx={{ color: isDark ? "#fff" : "#111" }}
+                      >
+                         Experience
+                      </Typography>
                    </Stack>
                    {workItems.map((item, index) => (
                        <TimelineItem
@@ -148,6 +180,7 @@ export default function ExperienceSection() {
                            data={item}
                            isLast={index === workItems.length - 1}
                            onOpen={() => setSelectedItem(item)}
+                           isDark={isDark}
                        />
                    ))}
                 </Stack>
@@ -164,34 +197,52 @@ export default function ExperienceSection() {
                      onClose={() => setSelectedItem(null)}
                      PaperProps={{
                         sx: {
-                           bgcolor: "#0A0A0A",
+                           bgcolor: isDark ? "#0A0A0A" : "#ffffff",
                            borderRadius: "24px",
-                           border: "1px solid rgba(139, 92, 246, 0.3)",
+                           border: `1px solid ${goldColor}4D`,
+                           boxShadow: isDark
+                               ? `0 20px 40px ${goldColor}33, 0 0 0 1px ${goldColor}1A inset`
+                               : `0 20px 40px ${goldColor}26, 0 0 0 1px ${goldColor}1A inset`,
                            p: 4,
-                           color: "#fff",
+                           color: isDark ? "#fff" : "#111",
                         },
                      }}
                  >
                     <IconButton
                         onClick={() => setSelectedItem(null)}
-                        sx={{ position: "absolute", right: 16, top: 16, color: "rgba(255,255,255,0.2)" }}
+                        sx={{
+                           position: "absolute",
+                           right: 16,
+                           top: 16,
+                           color: isDark ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.2)"
+                        }}
                     >
                        <Iconify icon="solar:close-circle-bold" width={28} />
                     </IconButton>
 
-                    <Typography variant="caption" sx={{ color: "#8B5CF6", fontWeight: 800 }}>
+                    <Typography variant="caption" sx={{ color: goldColor, fontWeight: 800 }}>
                        {selectedItem.period}
                     </Typography>
                     <Typography variant="h5" fontWeight={900} sx={{ mt: 1 }}>
                        {selectedItem.title}
                     </Typography>
-                    <Typography variant="subtitle1" sx={{ color: "rgba(255,255,255,0.5)", mb: 3 }}>
+                    <Typography
+                        variant="subtitle1"
+                        sx={{
+                           color: isDark ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.5)",
+                           mb: 3
+                        }}
+                    >
                        {selectedItem.company}
                     </Typography>
-                    <Divider sx={{ borderColor: "rgba(255,255,255,0.05)", mb: 3 }} />
+                    <Divider sx={{ borderColor: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)", mb: 3 }} />
                     <Typography
                         variant="body1"
-                        sx={{ color: "rgba(255,255,255,0.7)", lineHeight: 1.8, whiteSpace: "pre-line" }}
+                        sx={{
+                           color: isDark ? "rgba(255,255,255,0.7)" : "rgba(0,0,0,0.7)",
+                           lineHeight: 1.8,
+                           whiteSpace: "pre-line"
+                        }}
                     >
                        {selectedItem.details}
                     </Typography>
@@ -202,7 +253,7 @@ export default function ExperienceSection() {
    );
 }
 
-function TimelineItem({ data, isLast, onOpen }: any) {
+function TimelineItem({ data, isLast, onOpen, isDark }: any) {
    return (
        <Stack direction="row" spacing={3} sx={{ position: "relative", width: "100%" }}>
           {/* Dot & Line */}
@@ -212,8 +263,8 @@ function TimelineItem({ data, isLast, onOpen }: any) {
                     width: "15px",
                     height: "15px",
                     borderRadius: "50%",
-                    bgcolor: "#8B5CF6",
-                    boxShadow: "0 0 15px #8B5CF6",
+                    bgcolor: goldColor,
+                    boxShadow: `0 0 20px ${goldColor}, 0 4px 10px ${goldColor}4D`,
                     zIndex: 2,
                     position: "relative",
                     mt: "28px"
@@ -229,10 +280,22 @@ function TimelineItem({ data, isLast, onOpen }: any) {
               viewport={{ once: true }}
           >
              <Stack spacing={1}>
-                <Typography variant="h6" fontWeight={800} color="#fff" sx={{ lineHeight: 1.2 }}>
+                <Typography
+                    variant="h6"
+                    fontWeight={800}
+                    sx={{
+                       color: isDark ? "#fff" : "#111",
+                       lineHeight: 1.2
+                    }}
+                >
                    {data.title}
                 </Typography>
-                <Typography variant="body2" sx={{ color: "rgba(255,255,255,0.4)" }}>
+                <Typography
+                    variant="body2"
+                    sx={{
+                       color: isDark ? "rgba(255,255,255,0.4)" : "rgba(0,0,0,0.5)"
+                    }}
+                >
                    {data.company}
                 </Typography>
 
@@ -242,10 +305,11 @@ function TimelineItem({ data, isLast, onOpen }: any) {
                    py: 0.5,
                    width: "fit-content",
                    borderRadius: "100px",
-                   border: "1px solid rgba(139, 92, 246, 0.2)",
-                   bgcolor: "rgba(139, 92, 246, 0.05)"
+                   border: `1px solid ${goldColor}33`,
+                   bgcolor: isDark ? `${goldColor}0D` : `${goldColor}08`,
+                   boxShadow: `0 2px 8px ${goldColor}1A`,
                 }}>
-                   <Typography variant="caption" sx={{ color: "#8B5CF6", fontWeight: 700 }}>
+                   <Typography variant="caption" sx={{ color: goldColor, fontWeight: 700 }}>
                       {data.period}
                    </Typography>
                 </Box>
