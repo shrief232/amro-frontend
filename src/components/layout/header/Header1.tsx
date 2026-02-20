@@ -63,11 +63,11 @@ export default function HeaderMuiUnified({
     const isInternalPage = pathname !== "/";
 
     const menuItems = [
-        { name: "About", href: isInternalPage ? "/#about" : "#about" },
-        { name: "Resume", href: isInternalPage ? "/#resume" : "#resume" },
-        { name: "Services", href: isInternalPage ? "/#services" : "#services" },
-        { name: "Portfolio", href: isInternalPage ? "/#portfolio" : "#portfolio" },
-        { name: "Contact", href: isInternalPage ? "/#contact" : "#contact" },
+        { name: "About", href: PATHS.about },
+        { name: "Resume", href: PATHS.resume },
+        { name: "Portfolio", href: PATHS.portfolio },
+        { name: "Services", href: PATHS.services },
+        { name: "Contact", href: PATHS.contact },
     ];
 
     const socialLinks = [
@@ -77,9 +77,10 @@ export default function HeaderMuiUnified({
     ];
 
     const handleScroll = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, href: string) => {
-        if (href.startsWith("#") && pathname === "/") {
+        if (pathname === "/" && (href.startsWith("#") || href.startsWith("/#"))) {
             e.preventDefault();
-            const element = document.querySelector(href);
+            const targetId = href.replace("/", "");
+            const element = document.querySelector(targetId);
             if (element) {
                 element.scrollIntoView({
                     behavior: "smooth",

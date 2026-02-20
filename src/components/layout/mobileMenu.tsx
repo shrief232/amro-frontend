@@ -19,17 +19,30 @@ const menuItemVariants = {
 	closed: { y: 20, opacity: 0 }
 };
 
-const menuItems = [
-	{ label: "Home", href: "/", icon: "solar:home-2-linear" },
-	{ label: "Services", href: "/services", icon: "solar:widget-linear" },
-	{ label: "Portfolio", href: "/work", icon: "solar:case-minimalistic-linear" },
-	{ label: "Pricing", href: "/pricing", icon: "solar:wad-of-money-linear" },
-	{ label: "Blog", href: "/blog-list", icon: "solar:notes-linear" },
-	{ label: "Contact", href: "/#contact", icon: "solar:phone-calling-linear" },
-];
-
 export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 	const pathname = usePathname();
+	const isInternalPage = pathname !== "/";
+
+	const menuItems = [
+		{ label: "About", href: "/", icon: "solar:home-1-linear" },
+		{ label: "Resume", href: isInternalPage ? "/#resume" : "#resume", icon: "solar:notes-linear" },
+		{ label: "Services", href: isInternalPage ? "/#services" : "#services", icon: "solar:widget-linear" },
+		{ label: "Portfolio", href: isInternalPage ? "/#portfolio" : "#portfolio", icon: "solar:case-minimalistic-linear" },
+		{ label: "Contact", href: isInternalPage ? "/#contact" : "#contact", icon: "solar:phone-calling-linear" },
+	];
+
+	const handleLinkClick = (e: React.MouseEvent, href: string) => {
+		handleMobileMenu();
+
+		if (href.startsWith("#") && pathname === "/") {
+			e.preventDefault();
+			const targetId = href.replace("#", "");
+			const element = document.getElementById(targetId);
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth", block: "start" });
+			}
+		}
+	};
 
 	return (
 		<Drawer
@@ -95,14 +108,14 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 				<Box flex={1} overflow="auto" px={2} py={4} sx={{ zIndex: 1 }}>
 					<Stack spacing={1.5}>
 						{menuItems.map((item) => {
-							const isActive = item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
+							const isActive = item.href === "/" ? pathname === "/" : pathname === item.href;
 
 							return (
-								<Box key={item.href} variants={menuItemVariants} component={motion.div} whileTap={{ scale: 0.97 }}>
+								<Box key={item.label} variants={menuItemVariants} component={motion.div} whileTap={{ scale: 0.97 }}>
 									<Button
 										component={Link}
 										href={item.href}
-										onClick={handleMobileMenu}
+										onClick={(e) => handleLinkClick(e, item.href)}
 										fullWidth
 										startIcon={<Iconify icon={item.icon} width={22} />}
 										sx={{
@@ -137,8 +150,8 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }: any) {
 					<Stack spacing={2}>
 						<Button
 							component={Link}
-							href="/#contact"
-							onClick={handleMobileMenu}
+							href={isInternalPage ? "/#contact" : "#contact"}
+							onClick={(e) => handleLinkClick(e, isInternalPage ? "/#contact" : "#contact")}
 							variant="contained"
 							fullWidth
 							size="large"

@@ -11,7 +11,7 @@ interface OffCanvasProps {
     handleOffCanvas: () => void;
 }
 
-const goldColor = "#a67c32"; // اللون الذهبي الجديد
+const goldColor = "#a67c32";
 
 const containerVariants = {
     open: {
@@ -39,10 +39,10 @@ const SocialIconButton = styled(motion.a)(({ theme }) => ({
     border: "1px solid rgba(255,255,255,0.05)",
     transition: "all 0.3s ease",
     "&:hover": {
-        backgroundColor: goldColor, // تغيير هنا
+        backgroundColor: goldColor,
         color: "#fff",
-        borderColor: goldColor, // تغيير هنا
-        boxShadow: `0 8px 20px ${goldColor}4D`, // تغيير هنا مع شفافية
+        borderColor: goldColor,
+        boxShadow: `0 8px 20px ${goldColor}4D`,
     },
 }));
 
@@ -59,7 +59,7 @@ export default function OffCanvas({ isOffCanvas, handleOffCanvas }: OffCanvasPro
                     color: "#fff",
                     p: 0,
                     backgroundImage: "none",
-                    borderRight: `1px solid ${goldColor}1A`, // تغيير هنا (10% شفافية)
+                    borderRight: `1px solid ${goldColor}1A`,
                 },
             }}
         >
@@ -229,11 +229,11 @@ function ContactItem({ icon, label, value }: { icon: string; label: string; valu
                     width: 40,
                     height: 40,
                     borderRadius: "10px",
-                    backgroundColor: `${goldColor}0D`, // تغيير هنا (5% شفافية)
+                    backgroundColor: `${goldColor}0D`,
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    color: goldColor, // تغيير هنا
+                    color: goldColor,
                 }}
             >
                 <Iconify icon={icon} width={20} />
