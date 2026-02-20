@@ -90,7 +90,7 @@ export default function Layout({ breadcrumbTitle, children }: LayoutProps) {
                 style={{
                     width: "100%",
                     position: "relative",
-                    overflowX: "clip" // بدل hidden عشان الواترمارك يظهر
+                    overflowX: "clip"
                 }}
             >
                 {/* --- Global Vertical Watermark Start - Responsive --- */}
