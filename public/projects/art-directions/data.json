@@ -9,7 +9,7 @@
       "id": 201,
       "title": "Nassmat Ailol",
       "description": "Art direction for a high-end fashion editorial photoshoot with concept development and styling.",
-      "thumbnail": "/projects/art-directions/nassmat-ailol/1.png",
+      "thumbnail": "/projects/art-directions/nassmat-ailol/horizontal.png",
       "category_name": "Art Direction",
       "category_slug": "art-direction",
       "client_name": "Vogue Arabia",
@@ -18,16 +18,59 @@
         {
           "id": 2011,
           "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/1.png",
+          "order": 0
+        },
+        {
+          "id": 2012,
+          "media_type": "image",
           "source": "/projects/art-directions/nassmat-ailol/2.png",
           "order": 0
+        },
+        {
+          "id": 2013,
+          "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/3.png",
+          "order": 0
+        },
+        {
+          "id": 2014,
+          "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/4.png",
+          "order": 0
+        },
+        {
+          "id": 2015,
+          "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/bus.png",
+          "order": 0
+        },
+        {
+          "id": 2016,
+          "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/horizontal.png",
+          "order": 0
+        },
+        {
+          "id": 2017,
+          "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/top.png",
+          "order": 0
+        },
+        {
+          "id": 2018,
+          "media_type": "image",
+          "source": "/projects/art-directions/nassmat-ailol/vertical.png",
+          "order": 0
         }
+
       ]
     },
     {
       "id": 202,
       "title": "The Clown",
       "description": "Art direction for a new product launch campaign including set design and visual identity.",
-      "thumbnail": "/projects/art-directions/the-clown/post/13.png",
+      "thumbnail": "/projects/art-directions/the-clown/post/14.png",
       "category_name": "Art Direction",
       "category_slug": "art-direction",
       "client_name": "Nike Middle East",
@@ -91,6 +134,84 @@
           "id": 2014,
           "media_type": "image",
           "source": "/projects/art-directions/the-clown/post/10.png",
+          "order": 0
+        },
+        {
+          "id": 2015,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/11.png",
+          "order": 0
+        },
+        {
+          "id": 2016,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/12.png",
+          "order": 0
+        },
+        {
+          "id": 2017,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/13.png",
+          "order": 0
+        },
+        {
+          "id": 2018,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/14.png",
+          "order": 0
+        },
+        {
+          "id": 2019,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/15.png",
+          "order": 0
+        },
+        {
+          "id": 2020,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/16.png",
+          "order": 0
+        },
+        {
+          "id": 2021,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/17.png",
+          "order": 0
+        },
+        {
+          "id": 2022,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/18.png",
+          "order": 0
+        },
+        {
+          "id": 2023,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/19.png",
+          "order": 0
+        },
+        {
+          "id": 2024,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/20.png",
+          "order": 0
+        },
+        {
+          "id": 2025,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/21.png",
+          "order": 0
+        },
+        {
+          "id": 2026,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/22.png",
+          "order": 0
+        },
+        {
+          "id": 2027,
+          "media_type": "image",
+          "source": "/projects/art-directions/the-clown/post/23.png",
           "order": 0
         }
 

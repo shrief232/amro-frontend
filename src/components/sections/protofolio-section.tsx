@@ -10,6 +10,7 @@ interface Category {
     id: number;
     name: string;
     slug: string;
+    dataFile: string;
 }
 
 interface Project {
@@ -33,8 +34,7 @@ interface CategoryData {
 export default function PortfolioSection() {
     const theme = useTheme();
     const isDark = theme.palette.mode === "dark";
-
-    const [activeSlug, setActiveSlug] = useState<string>("all");
+    const [activeSlug, setActiveSlug] = useState<string | null>(null);
     const [categories, setCategories] = useState<Category[]>([]);
     const [allProjects, setAllProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
@@ -45,8 +45,11 @@ export default function PortfolioSection() {
             try {
                 const indexResponse = await fetch('/projects/index.json');
                 const indexData = await indexResponse.json();
-
                 setCategories(indexData.categories);
+
+                if (indexData.categories && indexData.categories.length > 0) {
+                    setActiveSlug(indexData.categories[0].slug);
+                }
 
                 const loadedProjects: Project[] = [];
 
@@ -71,9 +74,7 @@ export default function PortfolioSection() {
         loadAllData();
     }, []);
 
-    const filteredProjects = activeSlug === "all"
-        ? allProjects
-        : allProjects.filter(p => p.category_slug === activeSlug);
+    const filteredProjects = allProjects.filter(p => p.category_slug === activeSlug);
 
     return (
         <Box sx={{
@@ -91,12 +92,6 @@ export default function PortfolioSection() {
                     useFlexGap
                     sx={{ px: { xs: 1, sm: 0 } }}
                 >
-                    <FilterBtn
-                        active={activeSlug === "all"}
-                        onClick={() => setActiveSlug("all")}
-                        label="All"
-                        isDark={isDark}
-                    />
                     {categories.map((cat) => (
                         <FilterBtn
                             key={cat.id}

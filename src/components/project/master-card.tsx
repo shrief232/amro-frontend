@@ -19,11 +19,15 @@ const ImageContainer = styled(Box)({
     position: "relative",
     borderRadius: "16px",
     overflow: "hidden",
-    backgroundColor: "#1A1A1A",
+    // ده اللون اللي هيملأ الفراغات لو الصورة مش مربعة، خليه نفس لون خلفية الموقع عندك
+    backgroundColor: "#111",
     boxShadow: `0 8px 16px ${goldColor}1A, 0 0 0 1px ${goldColor}1A inset`,
-    aspectRatio: "1/1",
+    aspectRatio: "1/1", // عشان كلهم يبقوا نفس الطول والعرض بالظبط
     width: "100%",
     height: "auto",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
     transition: "all 0.3s ease",
     "&:hover": {
         boxShadow: `0 12px 28px ${goldColor}33, 0 0 0 1px ${goldColor}4D inset`,
@@ -51,9 +55,12 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                         }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
+                            // السر هنا: يملأ 100% من المساحة المتاحة له دون قص
+                            maxWidth: "100%",
+                            maxHeight: "100%",
+                            width: "auto",
+                            height: "auto",
+                            objectFit: "contain",
                             display: "block",
                         }}
                         onError={(e) => {
@@ -61,6 +68,7 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                         }}
                     />
 
+                    {/* Overlay بيظهر بس في الهوفر عشان يدي روح للكارت */}
                     <Box
                         component={motion.div}
                         variants={{
@@ -70,8 +78,8 @@ export const ProjectCard = ({ project, index }: { project: Project; index: numbe
                         sx={{
                             position: "absolute",
                             inset: 0,
-                            bgcolor: `${goldColor}26`, // 15% opacity
-                            mixBlendMode: "overlay",
+                            bgcolor: `${goldColor}15`, // شفافية خفيفة جداً
+                            pointerEvents: "none",
                         }}
                     />
                 </ImageContainer>
