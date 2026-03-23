@@ -23,15 +23,15 @@ const goldColor = "#a67c32";
 const contacts = [
     {
         label: "Phone Number",
-        value: "+20 123 456 7890",
+        value: "+20 115 403 4782",
         icon: "solar:phone-calling-bold-duotone",
-        link: "tel:+201234567890",
+        link: "tel:+20 115 403 4782",
     },
     {
         label: "Email Address",
-        value: "amr@example.com",
+        value: "mohyamr@gmail.com",
         icon: "solar:letter-bold-duotone",
-        link: "mailto:amr@example.com",
+        link: "mohyamr@gmail.com",
     },
     {
         label: "LinkedIn",
